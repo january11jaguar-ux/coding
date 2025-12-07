@@ -1,0 +1,9 @@
+body{
+    background:linear-gradient(Lime,burlywood,burlywood,lime)
+}
+.two::after{
+    content: ♟️;
+}
+.anee::after{
+    content: 📖;
+}
