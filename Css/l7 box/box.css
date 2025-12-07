@@ -1,0 +1,13 @@
+ body{ background-color: darkseagreen;}
+ h1{ 
+    font-family: Algerian;
+    
+ }
+ .ex{
+    font-weight: bolder;
+    font-style: oblique;
+ }
+ .if{
+    font-style: italic;
+    font-weight: bolder;
+ }

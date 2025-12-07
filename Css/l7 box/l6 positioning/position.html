@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>positioning</title>
+        <style>
+            div{
+                border: 4px dotted blue;
+            }
+            .stick{
+                position: sticky;
+                top: 40px;
+                border: 4px solid aqua;
+                font-size: large;
+            }
+               .relative{
+                position: relative;
+                left: 60px;
+                border: 4px solid aquamarine;
+                font-size: large;
+            }
+               .abs{
+                position: absolute;
+                right: 50px;
+                border: 4px solid cornflowerblue;
+                font-size: large;
+            }
+               .fix{
+                position: fixed;
+                border: 4px solid aqua;
+                font-size: large;
+            }
+            h1{
+                opacity: 1;
+            }
+            h2{
+                opacity: 0.5;
+            }
+            h3{
+                opacity: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>positioning</h1>
+        <div>div with no position</div>
+        <div class="stick">div with sticky position</div>
+        <div class="relative">div with relative position
+            <div class="abs">div with absolute position</div>
+        </div>
+        <div class="fix">div with fixed position</div>
+        <h1>Opaque</h1>
+        <h2>Translusent</h2>
+        <h3>Transparent</h3>
+       <br><br><br><br><br><br><br><br><br><br><br>
+       <br><br><br><br><br><br><br><br><br><br><br>
+       <br><br><br><br><br><br><br><br><br><br><br>
+       <br><br><br><br><br><br><br><br><br><br><br>
+       <br><br><br><br><br><br>
+    </body>
+</html>
