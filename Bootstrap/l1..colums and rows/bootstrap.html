@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Intro to Bootstraps</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <style>
+            .col{
+                border: 4px solid coral;
+            }
+            .w {
+                border: 4px dotted aqua;
+            }
+            .r {
+                border: 4px solid lime;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col">Column 1</div>
+                <div class="col">Column 2</div>
+                <div class="col">Column 3</div>
+            </div>
+        </div>
+         <div class="container">
+            <div class="row">
+                <div class="w col-3">Column 1</div>
+                <div class="w col-7">Column 2</div>
+                <div class="w col-2">Column 3</div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="r col-5">Column 1</div>
+                <div class="r col-4">Column 2</div>
+                <div class="r col-3">Column 3</div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-md-5" style="background-color: cadetblue;">Cover Larger md</div>
+                <div class="col-md-8 col-xs-4" style="background-color: crimson;">Medium</div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-12" style="background-color: firebrick;">
+                    <h1>Main section</h1>
+                    <p>This section takes more space on medium sized screens and larger</p>
+                </div>
+                <div class="col-md-5 col-12" style="background-color: burlywood;">
+                    <h3>Sider or secondary content</h3>
+                    <p>THis content is good for sidebar, additional links...</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
