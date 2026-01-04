@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Introduction to Java script</title>
+    </head>
+    <body>
+        <h1 id="h"></h1>
+        <h3 id="hello"></h3>
+        <p id="p"></p>
+        <h2>Variables and operators</h2>
+        <p id="result"></p>
+        <p id="0p"></p>
+        <p id="hp"></p>
+
+        <script>
+            document.getElementById('h').innerHTML="Welcome to Java script"
+            document.getElementById('hello').innerHTML="Java script with Visual studio code"
+            document.getElementById('p').innerHTML="Well we're still in Visual studio code but now we've complicated stuff and added Java script"
+
+            var num=5
+            var num2=8
+            var sum=num*num2
+
+            document.getElementById('result').innerHTML="this is an example of a variable .you may only see the answer so I've written the equation for you here 5*8="+sum
+
+            num2+=2
+            num-=3
+            
+            document.getElementById('0p').innerHTML="we have now Changed the value of the numbers as follows 8="+num2
+            document.getElementById('hp').innerHTML="and 5 is="+num
+        </script>
+    </body>
+</html>
