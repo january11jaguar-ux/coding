@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>functions in Java script</title>
+    </head>
+    <body>
+        <button onclick="Mult(8)">Execute</button>
+        <span id="p"></span>
+        <button onclick="mt()">Variable</button>
+        <p id="i"></p>
+        <p id="y"></p>
+        <h1 style="color: cadetblue;">Codingal</h1>
+        <p id="r"></p>
+        <script>
+            function Mult(x,y){
+                if(y==undefined){
+                    y=6
+                }
+                document.getElementById("p").innerHTML=x*y
+            }
+            var a=88//global
+            function mt(){
+                var u=2 //local
+                document.getElementById("i").innerHTML=a*u
+            }
+            document.getElementById("y").innerHTML=a
+            var result = function (a,b){return a*b}
+            document.getElementById("r").innerHTML=result(2,11)
+        </script>
+    </body>
+</html>
