@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Objects</title>
+    </head>
+    <body>
+        <h2>different ways to  access an object</h2>
+        <p>You can use .property or ["property"]</p>
+        <p id="o"></p>
+        <script>
+            var student={name:"Adna",
+                age:"9",
+                grade:"4"
+            }
+            document.getElementById("o").innerHTML= student.name+" is "+student["age"] +" yrs old and is in grade"+student.grade
+
+            var value= Math.abs(20)
+            document.write("Test build in: "+value+"<br>")
+            
+            var value= Math.acos(-1)
+            document.write("Test build in: "+value+"<br>")
+
+            var value= Math.asin(1)
+            document.write("Test build in: "+value+"<br>")
+
+            var value= Math.atan(.5)
+            document.write("Test build in: "+value+"<br>")
+                        
+            var value= Math.random()
+            document.write("Test build in: "+value+"<br>")
+        </script>
+    </body>
+</html>
