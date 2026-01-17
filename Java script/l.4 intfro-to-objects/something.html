@@ -2,9 +2,11 @@
     <head>
         <title>Arguments</title>
     </head>
-    <body>
         <p>finding the largest number with the help of an argument</p>
         <p id="re"></p>
+        <p id="te"></p>
+        <h4>adding</h4>
+        <p id="ee"></p>
         <script>
             function finMax(){
                 var i
@@ -17,6 +19,24 @@
                 return max
             }
             document.getElementById("re").innerHTML=finMax(7,22,45,6,4,5,111,2.5,2.25,88)
+            function finMax2(){
+                var i
+                var max=0
+                for (i=0;i<arguments.length;i++){
+                    if(arguments [i]>max){
+                        max=arguments[i]
+                    }
+                }
+                return max
+            }
+            document.getElementById("te").innerHTML=finMax(75,199,345,6,477,56,11,25,225,188)
+
+            var num1= 111
+
+            var num2= 475
+
+            var sum= num1+num2
+            document.getElementById("ee").innerHTML="The argument has chosen two numbers and has added them together to get :"+sum
         </script>
     </body>
 </html>
