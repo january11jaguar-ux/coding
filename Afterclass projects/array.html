@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Group</title>
+    </head>
+    <body>
+        <h1>The Group</h1>
+        <p>There are three lists here each of them includes one odd out</p>
+        <p>You must find pick the odd one out</p>
+        <p id="list1"></p>
+        <input id="l" type="text"><br>
+        <p id="list2"></p> 
+        <input id="ll" type="text"><br>
+        <p id="list3"></p> 
+        <input id="lll" type="text"><br>
+
+        <p id="message"></p>
+        <script>
+            var list1=["Lemonade","Coffee","Milk","Cake","Tea","Water"]
+            var list2=["car","Airplane","Ship","motorcycle","Couch"]
+            var list3=["Shirt","pants","wool","dress","socks"]
+
+            document.getElementById("list1").innerHTML=list1
+            document.getElementById("list2").innerHTML=list2
+            document.getElementById("list3").innerHTML=list3
+             
+            const msgbox = document.getElementById('message');
+            const input1 = document.getElementById('l');
+            const input2 = document.getElementById('ll');
+            const input3 = document.getElementById('lll');
+            let message =''
+
+            if (l===list1[4]){
+                message="1/3" 
+                msgbox.style.color = 'green'
+            }else if(ll===list2[5]){
+                message="2/3"
+                msgbox.style.color='green'
+            }else if(lll===list3[3]){
+                message="3/3" 
+                msgbox.style.color = 'green'
+            }else{
+                message ="try again"
+                msgbox.style.color='red'
+            }
+        </script>
+    </body>
+</html>
