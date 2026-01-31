@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Static Classes</title>
+    </head>
+    <body>
+        <h1>Java script class static methods</h1>
+        <p>A static method is created with the <mark>"static"</mark> Keyword,and
+             you can only call the methon on the class itself </p>
+             <p id="hi"></p>
+             <p id="hello"></p>
+             <P id="welcome"></P>
+             <script>
+                class student {
+                    constructor(name){
+                        this.student = name;
+                    }
+                    static hi(){// static method
+                        return "Hi ";
+                    }
+                    static hello(){
+                        return "Hello!!";
+                    }
+                    static welcome(x){
+                        return "Welcome " + x.student;
+                    }
+                }
+                myname = new student("Carol")
+                //Call 'hello()' on the class student and Not on the 'myname' object because 'hello()' is a static method
+                document.getElementById("hello").innerHTML= student.hello();
+                //Call 'hi()'on the 'myname' object
+                document.getElementById("hi").innerHTML= student.hi();
+                //Call 'Welcome()' can access the object since parameter is passed
+                 document.getElementById("welcome").innerHTML= student.welcome(myname);
+             </script>
+    </body>
+</html>
