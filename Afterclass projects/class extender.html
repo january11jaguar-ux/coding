@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Class extension</title>
+    </head>
+    <body>
+    <h1>Classes </h1>
+    <p id="nomnom"></p>
+        <script>
+             class icecream {
+                constructor(flavour){
+                    this.icecream = flavour
+                }
+                present(){
+                    return "My favourite ice cream flavour is "+ this.icecream
+                }
+             }
+             class toppings extends icecream{
+                constructor(flavour,extra){
+                    super(flavour)
+                    this.toppings = extra
+                }
+                show(){
+                    return this.present()+" ,additionally adding :"+this.toppings+" makes it taste better"
+                }
+             }
+             let myicecream = new toppings ("cookie n cream","Sprinkles")
+             document.getElementById("nomnom").innerHTML=myicecream.show()
+        </script>
+    </body>
+</html>
