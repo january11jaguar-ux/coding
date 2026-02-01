@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Array mapping</title>
+    </head>
+    <body>
+        <h2>JS Array Sort</h2>
+        <p>Click to arrange Arrays in order</p>
+        <button onclick="Ascending()">Ascending order</button>
+        <button onclick="Descending()">Descending order</button>
+         <p id="rr"></p>
+         <span id="Mapety"></span>
+        <script>
+            var point=[ 10,30,98,2,3,76,67,99]
+            document.getElementById("rr").innerHTML=point
+
+            function Ascending(){
+                point.sort(function(a,b){return(a-b)})
+                document.getElementById("rr").innerHTML=point        
+            }
+            function Descending(){
+                point.sort(function(a,b){return(b-a)})
+                document.getElementById("rr").innerHTML=point        
+            }
+            function Mapety(num){
+                return num *15
+            }
+            var NewPoint= point.map(Mapety)
+            document.getElementById("Mapety").innerHTML=NewPoint
+        </script>
+    </body>
+</html>

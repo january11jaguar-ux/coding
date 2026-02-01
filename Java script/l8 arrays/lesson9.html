@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Array classes</title>
+    </head>
+    <body>
+       <p>Click the button below to evaluate/execute JavaScript code/expression</p> 
+       <button onclick="myFunction()">Try It</button>
+       <p id="result"></p>
+       <script>
+        function myFunction(){
+            var x= 10
+            var y= 20
+            var a= eval("x + y") + "<br>";
+            var b= eval("2 * 2") + "<br>";
+            var c= eval("y - x") + "<br>";
+
+            var res= a + b + c;//concatenates the string
+            document.getElementById("result").innerHTML=res
+        }
+       </script>
+    </body>
+</html>
