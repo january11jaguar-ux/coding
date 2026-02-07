@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Datatype</title>
+    </head>
+    <body>
+        <h1>Convetion</h1>
+        <p id="ine"></p>
+        <p id="sr"></p>
+
+        <h2>Erorr handling</h2>
+        <p id="u"></p>
+        <p id="b"></p>
+        <script>
+            var x= 70
+            var y= 60
+
+            document.getElementById("ine").innerHTML= x-y
+            document.getElementById("sr").innerHTML= String(x) + String(y)
+
+            try{
+                addalert("Welcome guest!")
+            }
+            catch(err){
+                document.getElementById("u").innerHTML= err.message
+            }
+            const add=(a,b)=>a+b
+            document.getElementById("b").innerHTML=add(7,5)
+        </script>
+    </body>
+</html>
