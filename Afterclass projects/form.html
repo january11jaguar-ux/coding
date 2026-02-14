@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Form validation</title>
+    </head>
+    <body>
+        <form name="Myf" onsubmit="return Validateform()">
+            Name: <input type="text" name="fname" maxlength="10">
+            <input type="submit">
+        </form>
+        <p id="msgbox"></p>
+        <p>Enter your age :</p>
+        <input type="number" id="id" min="13" max="17" required>
+        <button onclick="mmf()">OK!</button>
+        <p>you must be younger than 18 and above 12</p>
+        <p id="rbox"></p>
+        <script>
+            function Validateform(){
+                y=document.forms["Myf"]["fname"].value
+                if(y==""){
+                    alert("NAME MUST BE FILLED OUT FIRST!!")
+                    return false
+                }
+                document.getElementById("msgbox").innerHTML=y 
+                return false
+            }
+
+            function mmf(){
+                var inp = document.getElementById("id")
+                
+                if(!inp.checkValidity()){
+                    document.getElementById("rbox").innerHTML=inp.validationMessage    
+                }else{
+                    document.getElementById("rbox").innerHTML= "OKAY WE'RE ON A ROLL!!"
+                    alert("WELCOME MY FRIEND TO THE COOL GROUP 😎")
+                }
+            }
+        </script>
+    </body>
+</html>
