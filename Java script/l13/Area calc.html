@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Area calculator</title>
+    </head>
+    <body>
+        <div id="box">
+            <h1>Area Calculator</h1>
+            <button onclick="startCalculator()">Start calculator</button>
+        </div>
+
+        <script>
+            function startCalculator(){
+                var choice= prompt(
+                    "Welcome to area calculator.\n\n"+
+                    "Enter your choice \n"+
+                    "1 Area of a Rectangle \n"+
+                    "2 Area of a Triangle \n"+
+                    "3 Area of a Circle \n"+
+                    "4 Area of a Parallologram\n"
+                 )
+                 if(choice==1){
+                    var l = prompt("Enter the legnth : ")
+                    var w = prompt("Enter the width : ")
+                    if(l&&w){
+                        var result = Number(l)*Number(w)
+                        alert("Area of Rectangle is :"+ result )
+                    }
+                 }else if(choice==2){
+                    var h = prompt("Enter the height : ")
+                    var b = prompt("Enter the base : ")
+                    if(h&&b){
+                        var result = Number(h)*Number(b)/Number(2)
+                        alert("Area of Triangle is :"+ result )
+                    }
+                 }else if(choice==3){
+                    var r = prompt("Enter the radius : ")
+                    if(r){
+                        var result = 3.14*Number(r)*Number(r)
+                        alert("Area of Circle is :"+ result )
+                    }
+                 }else if(choice==4){
+                    var height = prompt("Enter the height : ")
+                    var base= prompt("Enter the base : ")
+                    if(height&&base){
+                        var result = Number(height)*Number(base)
+                        alert("Area of Parralelogram is :"+ result )
+                    }
+                 } else{
+                    alert ("invalid choice please choose between 1,2,3 and 4")
+                 }
+            }
+        </script>
+    </body>
+</html>
