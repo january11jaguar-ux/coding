@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>Palindrome App</title>
+        <style>
+            body{
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+                background: linear-gradient(135deg, Azure,teal,aquamarine);
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+            }
+            
+            .container{
+                background: Azure ;
+                padding: 30px ;
+                border-radius: 10px;
+                width: 350px ;
+                text-align: center;
+                box-shadow:0 10px 25px black ;
+            }
+
+            input{
+                width: 100px ;
+                padding: 10px;
+                margin-bottom: 15px ;
+                border-radius: 5px ;
+                border: 1px solid coral;
+            }
+
+            button{
+                border: none ;
+                padding: 10px 15px ;
+                background: beige;
+                color: cadetblue;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            
+            button:hover{
+                background-color: crimson;
+            }
+            #result{
+                margin-top: 5px;
+                font-weight: bold;
+            }
+            .Success{
+                color: greenyellow;
+            }
+            .Error{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Palindrome Checker</h2>
+            <input type="text" id="inputtext" placeholder="Enter a word or a sentence to check">
+            <button onclick="Checkpal()">Check</button>
+            <p id="result"></p>
+        </div>
+        <script>
+            function Checkpal(){
+                const text= document.getElementById("inputtext").value 
+                const result=document.getElementById("result")
+          
+            if(text.trim()===""){
+                result.textContent="please Enter some text"
+                result.className= "error"
+                return
+                }
+                  const cleanedtext=text.replace(/[^A-Z0-9]/gi,"").toLowerCase()
+                const reversedText=cleanedtext.split("").reverse().join("")
+
+                if (cleanedtext===reversedText){
+                    result.textContent=` "${text}"" is a palandrome!` 
+                    return className= "Success"
+                } else{
+                    result.textContent=` "${text}"" is not a palandrome!` 
+                    return className = "Error"
+                }
+            }
+           
+        </script>
+
+    </body>
+</html>
