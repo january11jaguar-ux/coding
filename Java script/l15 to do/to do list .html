@@ -1,0 +1,186 @@
+<html>
+    <head>
+        <title>To do list</title>
+        <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+
+    .container {
+        width: 400px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        color: white;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    form {
+        display: flex;
+        gap: 10px;
+    }
+
+    input {
+        flex: 1;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+    }
+
+    button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        background: #00c9a7;
+        color: white;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #00a58c;
+        transform: scale(1.05);
+    }
+
+    ul {
+        list-style: none;
+        margin-top: 20px;
+    }
+
+    li {
+        background: rgba(255,255,255,0.15);
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    li.completed span {
+        text-decoration: line-through;
+        opacity: 0.6;
+    }
+
+    .task-buttons button {
+        background: crimson;
+        padding: 5px 8px;
+        font-size: 12px;
+        margin-left: 5px;
+    }
+
+    .task-buttons button:first-child {
+        background: #00c9a7;
+    }
+
+    .task-buttons button:hover {
+        opacity: 0.8;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0; transform: translateY(10px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+</style>
+    </head>
+    <body>
+        <div id="container">
+            <h2>My to do list</h2>
+            <form id="myform">
+                <input type="text" id="inp" placeholder="Add a new task..." required>
+                <button>Add</button>
+            </form>
+            <ul id="myItem"></ul>
+        </div>
+
+        <script>
+            const myForm= document.getElementById("myform")
+            const input= document.getElementById("inp")
+            const myItem = document.getElementById("myItem")
+
+            document.addEventListener("DOMContentLoaded", loadTasks)
+
+           myForm.addEventListener("submit",function(event){
+            event.preventDefault()
+            if(input.value.trim()==="") return
+            createItem(input.value)
+            saveTask(input.value)
+            input.value=""
+            input.focus()
+           })
+
+           function createItem(text, completed=false){
+             const li = document.createElement("li")
+             if(completed) li.classList.add("completed")
+
+             li.innerHTML =` 
+             <span> ${text} <span>
+                <div class="task-button">
+                <button onclick="toggleComplete(this)"> ✔️<button>
+                <button onclick=" deleteElement(this)"> x <button>
+                <div>
+            `
+            myItem.appendChild(li)
+           }
+
+           function deleteElement(element){
+            const li = element.parentElement.parentElement
+            li.style.opacity = "0"
+            setTimeout(() => {
+                removeTask(li.querySelector("span").textContent)
+                li.remove()
+            }, 300)
+           }
+
+           function toggleComplete(element){
+            const li = element.parentElement.parentElement
+            li.classList.toggle("completed")
+            updateStorage()
+           }
+           function saveTask(task){
+            let tasks = JSON.parse(localStorage.getItem("tasks")) || []
+            task.push({text : task,completed: false})
+            localStorage,setItem("tasks", JSON.stringify(tasks))
+           }
+           function removeTask(taskText){
+            let tasks = JSON.parse(localStorage.getItem("tasks")) || []
+             task = task.filter(task => task.text !== taskText)
+            localStorage,setItem("tasks", JSON.stringify(tasks))
+           }
+           function updateStorage(){
+            let tasks = []
+            document.querySelectorAll( "li").forEach(li => {
+                tasks.push({
+                    text: li.querySelector("span").textContent,
+                    complete: li.classList.contains("completed")
+            })
+            })
+           }
+
+           function loadTasks(){
+            let tasks = JSON.parse(localStorage.getItem("tasks")) || []
+            tasks.forEach(task => createItem(task.text, task.completed))
+           }
+        </script>
+    </body>
+</html>
