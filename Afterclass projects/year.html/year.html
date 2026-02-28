@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>date</title>
+        <style>
+            body{
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background:linear-gradient(-45deg,pink,whitesmoke,orchid);
+                background-size :400% 400%;
+                animation: gradientBG 12s ease infinite;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                overflow: hidden;
+            }
+            @keyframe gradientBG{
+                0%{background-position :0% 50%;}
+                50%{background-position :100% 50%;}
+                100%{background-position :0% 50%;}
+            }
+            .clock-container{
+                text-align: center;
+                padding: a40px 80px;
+                border-radius: 20px;
+                backdrop-filter: blur(15px);
+                background: cyan;
+                box-sizing: 0 0 40px dark;
+            }
+            #dateOutput{
+                font-size: 100px;
+                font-weight: bolder;
+                letter-spacing: 5px;
+                animation: glow 2s infinite alternate;
+            }
+             @keyframes glow {
+                    from {
+                        color:whitesmoke;
+                        text-shadow: 0 0 20px cadetblue, 0 0 40px cadetblue;
+                    }
+                    to{
+                        color:yellow ;
+                        text-shadow: 0 0 30px yellowgreen, 0 0 60px yellow;
+                    }
+                }
+                .particles{
+                    position: absolute;
+                    width: 6px;
+                    height: 6px;
+                    background-color: white;
+                    border-radius: 50%;
+                    opacity: 0.6;
+                    animation: float 8s linear infinite;
+                }
+                @keyframes float{
+                    from {
+                        transform: translateY(100vh) scale(0.5);
+                    }
+                to {
+                    transform: translateY(-10vh) scale(1.2);
+                }
+                }
+        </style>
+    </head>
+<body onload="createParticles()">
+
+<div class="clock-container">
+    <p id="dateOutput"></p>
+</div>
+
+
+<script>
+    const today = new Date();
+
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1; 
+    const date = today.getDate();
+
+    const formattedMonth = String(month).padStart(2, '0');
+    const formattedDate = String(date).padStart(2, '0');
+
+    const dateString = `${year}-${formattedMonth}-${formattedDate}`;
+
+    document.getElementById("dateOutput").textContent = dateString;
+
+    function createParticles(){
+                for (let i=0; i<40;i++){
+                    const particles = document.createElement("div")
+                    particles.classList.add('particles')
+                    particles.style.left=Math.random()*100+"vw"
+                    particles.style.animationDuration= (5+Math.random()*5)+"s"
+                    particles.style.opacity= Math.random()
+                    document.body.appendChild(particles)
+                }}
+</script>
+
+</body>
+</html>
