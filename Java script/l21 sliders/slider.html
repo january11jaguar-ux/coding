@@ -67,19 +67,15 @@
     </head>
     <body>
         <div class="slider-container">
-            <div class="myslides-fade">
+            <div class="myslides fade">
                 <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?cs=srgb&dl=pexels-souvenirpixels-417074.jpg&fm=jpg" alt="Nature">
                 <div class="text">Beautiful Nature</div>
             </div>
-        </div>
-        <div class="slider-container">
-            <div class="myslides-fade">
+            <div class="myslides fade">
                 <img src="https://eos.org/wp-content/uploads/2019/12/earth-at-night-from-space.jpg" alt="world">
                 <div class="text">explore world</div>
-            </div>
-        </div>
-        <div class="slider-container">
-            <div class="myslides-fade">
+            </div>       
+            <div class="myslides fade">
                 <img src="https://greggvanourek.com/wp-content/uploads/2022/04/Adventure-hiking-among-clouds.jpg" alt="Adventure">
                 <div class="text">Adventure awaits</div>
             </div>
@@ -103,15 +99,15 @@
             }
             function showSlides(n){
             let i
-            let slide = document.getElementsByClassName("myslides-fade")
+            let slide = document.getElementsByClassName("myslides")
             let dots = document.getElementsByClassName("dot")
             if(n>slide.length){slideIndex=1}
             if(n<1){slideIndex=slide.length}
             for(i=0; i<slide.length; i++){
                 slide[i].style.display="none"
             }
-            for(i=0; i<slide.length; i++){
-                dots[i].className=dots[i].className.replace("Active","")
+            for(i=0; i<dots.length; i++){
+                dots[i].className=dots[i].className.replace("active","")
         }
         slide[slideIndex-1].style.display="block"
         dots[slideIndex-1].className+="active"
