@@ -1,0 +1,61 @@
+body,html{
+    height:100% ;
+    margin: 0;
+    font-family: cursive;
+    line-height: 1.8;
+}
+.pimg1,.pimg2,.pimg3{
+            position: relative;
+            opacity: 0.85;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+}
+.pimg1{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9AV-ML5OQEivpWN5XCPWOM3xYBzmlRQnF8g&s);
+    min-height: 100%;
+}
+.pimg2{
+    background-image: url(https://images.yourstory.com/cs/1/ea667c40-c898-11e9-a36a-eb06ee850db6/websitedesign1566891583958.jpg?mode=crop&crop=faces&ar=16%3A9&format=auto&w=1920&q=75);
+    min-height: 400px;
+}
+.pimg3{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToVy-xgSlkiDkzgYx8mMvTE3OoPTSb37mFjA&s);
+    min-height: 400px;
+}
+.ptext{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: aqua;
+    font-size: 35px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+.border{
+    background-color: black;
+    padding: 20px;
+
+}
+.border .trans{
+ background: transparent;
+}
+.section{
+    text-align: center;
+    padding: 60px 100px;
+}
+.section-light{
+    background: white;
+    color: gray;
+}
+.section-dark{
+    background: black;
+    color: rgb(91, 89, 89);
+}
+.Demoo{
+    width: 250px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
