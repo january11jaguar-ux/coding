@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>An Evil website</title>
+        <style>
+            body{
+                margin: 0;
+                font-family: 'Courier New', Courier, monospace;
+                background-color: grey;
+            }
+            .topnav{
+                background:linear-gradient(90deg , black,dimgray) ;
+                overflow:hidden ;
+                padding: 5px 0;
+                box-shadow: 0 4px 10px black;
+            }
+            a{
+                float:left ;
+                color:white ;
+                text-align: center;
+                padding:16px 22px ;
+                text-decoration:none ;
+                font-size: 18px;
+                letter-spacing:1px ;
+                transition: 0.3s;
+            }
+            a:hover{
+                background-color: crimson;
+                color:black ;
+                transform: scale(1.05); /*Fixed*/
+                font-weight: bold;
+            }
+            a.active{
+                background-color: crimson;
+                color: black;
+                font-weight: bold;
+            }
+            .slideshow-container{
+                width:100% ;
+                max-height:500px ;
+                position: relative;
+                margin-top: 0;
+            }
+            .myslides{
+                width: 100%;
+                display: none;
+                object-fit: cover;
+                height: 500px;
+            }
+            .fade{
+                animation: fadeEffect 1.5s;
+            }
+            @keyframes fadeEffect{
+                from{opacity: 0.4;}
+                to{opacity: 1;}
+            }
+        </style>
+    </head>
+    <body>
+        <div class="topnav">
+            <a href="#" class="active">Home</a>
+            <a href="#">About us</a>
+            <a href="#">Gallery</a>
+            <a href="#">Contact us</a>
+        </div>
+        <div class="slideshow-container">
+            <img src="https://phswasco.com/wp-content/uploads/2025/11/Forsaken_thumb.webp" alt="Forsaken_thumb" class="myslides fade">
+            <img src="https://tr.rbxcdn.com/180DAY-9de121943d276ad918de7788fa5e51ff/500/280/Image/Jpeg/noFilter" alt="DOD" class="myslides fade">
+            <img src="https://tr.rbxcdn.com/180DAY-05e0935990b1b457d6a7fa4ee45f2d7f/768/432/Image/Webp/noFilter" alt="Dandy's world" class="myslides fade">
+        </div>
+        <script>
+            let  myIndex= 0
+            carousel()
+            function carousel(){
+                let i
+                let x= document.getElementsByClassName("myslides")
+
+                for(i=0; i<x;i++){
+                    x[i].style.display="none"
+                }
+                myIndex++
+                if(myIndex>x.length){
+                    myIndex=1
+                }
+                x[myIndex-1].style.display="block"
+                setTimeout(carousel,3000)
+
+            }
+        </script>
+    </body>
+</html>
