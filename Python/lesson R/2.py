@@ -3,7 +3,7 @@ class Parrot :
     #create atributte
     species = "birds"
     #insistant atribute
-    def __int__(self, name, age):
+    def __init__(self, name, age):
         self.name = name 
         self.age = age
 

@@ -1,6 +1,6 @@
 #create a class
 class Vehicle :
-    def __int__(self, max_speed, mileage):
+    def __init__(self, max_speed, mileage):
         #blind argument
         self.max_speed = max_speed
         self.mileage = mileage
