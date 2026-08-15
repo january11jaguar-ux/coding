@@ -17,13 +17,13 @@ pygame.init()
 
 screen = pygame.display.set_mode((SCREEN_HEIGHT,SCREEN_WIDTH))
 
-bg = pygame.image.load('bg.png')
+bg = pygame.image.load('Python/lesson Z1/background.png')
 
 pygame.display.set_caption("Space invader")
-icon = pygame.image.load('ufo.png')
+icon = pygame.image.load('Python/lesson Z1/ufo.png')
 pygame.display.set_icon(icon)
 
-playerImg = pygame.image.load('player.png')
+playerImg = pygame.image.load('Python/lesson Z1/space game.py')
 playerX = PLAYER_START_X
 playerY = PLAYER_START_Y
 playerX_change = 0
@@ -36,13 +36,13 @@ enemyY_change = []
 num_of_enemies = 6
 
 for i in range(num_of_enemies):
-    enemyImg.append(pygame.image.load('enemy.png'))
+    enemyImg.append(pygame.image.load('Python/lesson Z1/enemy.png'))
     enemyX.append(random.randint(0, SCREEN_WIDTH - 64))
     enemyY.append(random.randint(ENEMY_START_Y_MIN, ENEMY_START_X_MAX))
     enemyX_change.append(ENEMY_SPEED_X)
     enemyY_change.append(ENEMY_SPEED_Y)
 
-bulletImg = pygame.image.load('bullet.png')
+bulletImg = pygame.image.load('Python/lesson Z1/bullet.png')
 bulletX = 0
 bulletY = PLAYER_START_Y
 bulletX_change = 0
