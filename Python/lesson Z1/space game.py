@@ -15,7 +15,7 @@ COLLISION_DISTANCE = 27
 
 pygame.init()
 
-screen = pygame.display.set_mode((SCREEN_HEIGHT,SCREEN_WIDTH))
+screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
 
 bg = pygame.image.load('Python/lesson Z1/background.png')
 
@@ -24,6 +24,7 @@ icon = pygame.image.load('Python/lesson Z1/ufo.png')
 pygame.display.set_icon(icon)
 
 playerImg = pygame.image.load('Python/lesson Z1/player.png')
+playerImg = pygame.transform.scale(playerImg, (50,50))
 playerX = PLAYER_START_X
 playerY = PLAYER_START_Y
 playerX_change = 0
@@ -36,13 +37,16 @@ enemyY_change = []
 num_of_enemies = 6
 
 for i in range(num_of_enemies):
-    enemyImg.append(pygame.image.load('Python/lesson Z1/enemy.png'))
+    enemy_Img = pygame.image.load('Python/lesson Z1/enemy.png')
+    enemy_Img = pygame.transform.scale(enemy_Img, (50,50))
+    enemyImg.append(enemy_Img)
     enemyX.append(random.randint(0, SCREEN_WIDTH - 64))
     enemyY.append(random.randint(ENEMY_START_Y_MIN, ENEMY_START_X_MAX))
     enemyX_change.append(ENEMY_SPEED_X)
     enemyY_change.append(ENEMY_SPEED_Y)
 
 bulletImg = pygame.image.load('Python/lesson Z1/bullet.png')
+bulletImg = pygame.transform.scale(bulletImg, (20,30))
 bulletX = 0
 bulletY = PLAYER_START_Y
 bulletX_change = 0
@@ -64,7 +68,7 @@ def game_over_text():
     screen.blit(over_text, (200,250))
 def player(x,y):
     screen.blit(playerImg, (x, y))
-def enemy(x,y):
+def enemy(x,y,i):
     screen.blit(enemyImg[i], (x, y))
 def fire_bullet(x, y):
     global bullet_state
@@ -101,12 +105,12 @@ while running :
     for i in range(num_of_enemies):
         if enemyY[i] > 340:
             for j in range(num_of_enemies):
-                enemy[j] = 2000
+                enemyY[j] = 2000
             game_over_text()
             break
 
         enemyX[i]+=enemyX_change[i]
-        if enemyX[i]<=0 or enemyX[i] >= SCREEN_WIDTH -64:
+        if enemyX[i]<=0 or enemyX[i] >= SCREEN_WIDTH -50:
             enemyX_change[i]*= -1
             enemyY[i] += enemyY_change[i]
         if isCollision(enemyX[i],enemyY[i], bulletX, bulletY):
