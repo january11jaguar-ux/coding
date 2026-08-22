@@ -110,7 +110,7 @@ while running :
             break
 
         enemyX[i]+=enemyX_change[i]
-        if enemyX[i]<=0 or enemyX[i] >= SCREEN_WIDTH -50:
+        if enemyX[i]<=0 or enemyX[i] >= SCREEN_WIDTH -50 :
             enemyX_change[i]*= -1
             enemyY[i] += enemyY_change[i]
         if isCollision(enemyX[i],enemyY[i], bulletX, bulletY):
