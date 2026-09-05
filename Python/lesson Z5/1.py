@@ -5,7 +5,7 @@ window = Tk()
 window.title("codingl's Text Editor")
 window.geometry("600x500")
 window.rowconfigure(0, minsize=800, weight=1)
-window.columnconfigure(0, minsize=800, weight=1)
+window.columnconfigure(1, minsize=800, weight=1)
 
 def open_file():
     """Open a file for editing"""
@@ -40,8 +40,8 @@ fr_button = Frame(window, relief=RAISED, bd=2)
 btn_open = Button(fr_button, text="Open", command=open_file)
 btn_save = Button(fr_button, text="Save as...", command=save_file)
 
-btn_open.grid(row=0, column=0, sticky="ew,", padx=5, pady=5)
-btn_save.grid(row=1, column=0, sticky="ew,", padx=5)
+btn_open.grid(row=0, column=0, sticky="ew", padx=5, pady=5)
+btn_save.grid(row=1, column=0, sticky="ew", padx=5)
 
 fr_button.grid(row=0, column=0, sticky="ns")
 txt_edit.grid(row=0, column=1, sticky="nsew")
