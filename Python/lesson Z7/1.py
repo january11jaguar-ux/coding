@@ -22,7 +22,7 @@ class ROM:
         frame = ttk.Frame(root)
         frame.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
 
-        ttk.label(
+        ttk.Label(
             frame,
             text="Restuaramt Order Management",
             font=("Arial", 20, "bold")
@@ -90,7 +90,7 @@ class ROM:
         canvas = tk.Canvas(root, width=bg_width, height=bg_heigh)
         canvas.pack()
 
-        original_img = tk.PhotoImage(file= "Background_image.png")
+        original_img = tk.PhotoImage(file= "Python/lesson Z7/Screenshot 2026-09-08 113529.png")
         backgroun_img = original_img.subsample(
             original_img.width() //bg_width,
             original_img.height()//bg_heigh
