@@ -1,5 +1,5 @@
 def SieveOfEratosthenes(num):
-    prime = [True for i in rangte(num +1)]
+    prime = [True for i in range(num +1)]
     p = 2
     while (p * p <= num):
         if(prime[p] == True):
