@@ -1,0 +1,1 @@
+#Create a power of 2 scanner that can check power of 4, and 8 too
