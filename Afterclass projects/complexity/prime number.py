@@ -1,6 +1,6 @@
 #create a code that finds prime numbers with two numbers/digits
 
-a = int(input("Enter first number: "))
+a = int(input("Enter first number (must be smaller than end or else the code wont work): "))
 b = int(input("Enter second number: "))
 
 for n in range(a, b + 1):

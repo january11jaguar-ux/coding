@@ -1,0 +1,1 @@
+#do not swap with another variable detect if positive or negative left shift 
