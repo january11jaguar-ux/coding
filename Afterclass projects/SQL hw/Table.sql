@@ -11,6 +11,10 @@ INSERT INTO fruits(name, color, price) VALUES
 ('Grapes', 'Green', 15),
 ('Orange', 'Orange', 10),
 ('Mango', 'Yellow', 25);
+SELECT * FROM fruits;
+
+SELECT color, price 
+FROM fruits;
 
 SELECT * FROM fruits
 WHERE color = 'Yellow';
